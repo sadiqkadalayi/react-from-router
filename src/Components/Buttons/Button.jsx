@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Button({label,handle}) {
+function Button({label,handle,btnClass}) {
   return (
     <>
-        <a onClick={handle} className="x-5 btn btn-primary shadow mt-1" aria-current="page" href="#">{label ?? "Click me"}</a>
+        <button onClick={handle} className={`x-5 btn ${btnClass ?? 'btn-primary'} shadow mt-1`} aria-current="page" href="#">{label ?? "Click me"}</button>
     </>
   )
 }

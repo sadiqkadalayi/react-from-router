@@ -9,19 +9,32 @@ import SugnUp from "./Components/SignUp/SugnUp";
 import SubHead from "./Components/SubHead";
 
 function App() {
+  const [boxType, setBoaxType] = useState('login')
+  const showLogin = () => {
+      setBoaxType('login');
+  }    
+
+  const showSignUp = () => {
+      setBoaxType('signUp');
+  }
+  const hideAll = () => {
+    setBoaxType('hide');
+  }
 
   return (
     <>
-      <Nav/>
+      <Nav showL={showLogin} showS={showSignUp} hideA={hideAll}/>
       <SubHead/>
       <div className="container mt-lg-5 mb-lg-5">
         <div className="row d-flex justify-content-center align-middle">
-          <Login />
-          <SugnUp />
+          {boxType === 'login' ? <Login /> :null }
+          {boxType === 'signUp' ? <SugnUp /> :null }
+          {boxType==='hide' ? <Blank/>: null}
+          
         </div>
       </div>
 
-      {/* <Blank/> */}
+     
       <Footer />
     </>
   );

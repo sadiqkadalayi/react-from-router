@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Nav.css'
 import Button from '../Buttons/Button'
 
 
-function Nav() {
+function Nav({showL,showS,hideA}) {
+
+    
+
   return (
     <div className="container mt-4">
         <div className="row">
@@ -16,10 +19,10 @@ function Nav() {
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <ul className="nav nav-tabs">
                     <li className="nav-item ">
-                        <Button label={'Register'}/>
-                    </li>&nbsp;
+                        <Button label={'Sign Up'} btnClass={'btn-secondary'} handle={showS}/>
+                    </li>&nbsp;&nbsp;&nbsp;
                     <li className="nav-item">
-                        <Button label={'Login'}/>
+                        <Button label={'Login'} handle={showL}/>
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Languages</a>
@@ -35,7 +38,7 @@ function Nav() {
                         <a className="nav-link" href="#">Node JS</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link disabled" aria-disabled="true">Express</a>
+                        <Button label={'Logout'} btnClass={'btn-danger'} handle={hideA}/>
                     </li>
                 </ul>
             </div>
