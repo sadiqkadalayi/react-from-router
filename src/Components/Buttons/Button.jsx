@@ -1,9 +1,18 @@
 import React from 'react'
 
-function Button({label,handle,btnClass}) {
+function Button({ label, handle, btnClass,toggle,targetArea }) {
   return (
     <>
-        <button onClick={handle} className={`x-5 btn ${btnClass ?? 'btn-primary'} shadow mt-1`} aria-current="page" href="#">{label ?? "Click me"}</button>
+      <button 
+      type='button' 
+      onClick={handle} 
+      className={`x-5 btn ${btnClass ?? 'btn-primary'} shadow mt-1`} 
+      data-bs-toggle={toggle ?? ''} 
+      data-bs-target={targetArea ?? ''}
+      aria-current="page" 
+      href="#">
+      {label ?? "Click me"}
+      </button>
     </>
   )
 }

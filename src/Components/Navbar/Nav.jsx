@@ -3,9 +3,8 @@ import './Nav.css'
 import Button from '../Buttons/Button'
 
 
-function Nav({showL,showS,hideA}) {
 
-    
+function Nav({showL,showS,hideA,Hshow}) {
 
   return (
     <div className="container mt-4">
@@ -14,7 +13,7 @@ function Nav({showL,showS,hideA}) {
               <div className="row">
               <h4>React Mini Project</h4>
               </div>
-                
+              
             </div>
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <ul className="nav nav-tabs">
@@ -35,7 +34,8 @@ function Nav({showL,showS,hideA}) {
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Node JS</a>
+                    <Button label={'Modal'} btnClass={'btn-success'} handle={Hshow}/>
+                    &nbsp;&nbsp;
                     </li>
                     <li className="nav-item">
                         <Button label={'Logout'} btnClass={'btn-danger'} handle={hideA}/>
