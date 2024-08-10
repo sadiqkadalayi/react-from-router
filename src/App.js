@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Nav from "./Components/Navbar/Nav";
+import "./App.css";
+import Footer from "./Components/Footer";
+import Blank from "./Components/404/Blank";
+import { useState } from "react";
+import Login from "./Components/Login/Login";
+import SugnUp from "./Components/SignUp/SugnUp";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav/>
+      <div className="container mt-lg-5 mb-lg-5">
+        <div className="row d-flex justify-content-center">
+          <Login />
+          <SugnUp />
+        </div>
+      </div>
+
+      {/* <Blank/> */}
+      <Footer />
+    </>
   );
 }
 
