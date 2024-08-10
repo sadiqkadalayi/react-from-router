@@ -15,7 +15,7 @@ function App() {
       <Nav/>
       <SubHead/>
       <div className="container mt-lg-5 mb-lg-5">
-        <div className="row d-flex justify-content-center">
+        <div className="row d-flex justify-content-center align-middle">
           <Login />
           <SugnUp />
         </div>

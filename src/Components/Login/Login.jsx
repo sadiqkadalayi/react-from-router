@@ -7,9 +7,9 @@ function Login() {
 
     return (
     <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-      <div className="L-main-cont mt-lg-2 shadow">
+      <div className="mt-lg-2 shadow rounded-3 bg-success-subtle">
         
-            <div className="inputs-fileds">
+            <div className="inputs-fileds p-5">
                 <Input labelName={'Username'}/>
                 <Input labelName={'Password'} type={'password'}/>
                 <Button label={'Login'} />

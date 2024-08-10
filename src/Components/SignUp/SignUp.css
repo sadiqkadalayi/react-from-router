@@ -2,7 +2,7 @@
     background-color: rgb(203, 233, 233);
     display: flex;
     width: 100%;
-    height: 55vh;
+    height: 65vh;
     border: 1px solid none;
     border-radius: 1rem;
     justify-content: left;
@@ -16,4 +16,20 @@
     display: flex;
     gap: 0.3rem;
     flex-wrap: wrap;
+}
+
+@media (max-width: 762px) {
+    .S-main-cont {
+        background-color: rgb(203, 233, 233);
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        border: 1px solid none;
+        border-radius: 1rem;
+        justify-content: left;
+        align-items: center;
+        padding: 3rem;
+        gap: 20px 70px;
+        flex-wrap: wrap;
+    }
 }
