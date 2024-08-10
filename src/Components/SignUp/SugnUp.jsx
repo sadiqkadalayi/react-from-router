@@ -12,7 +12,7 @@ function SugnUp() {
             <Input labelName={'Mobile Number'}/>
             <Input labelName={'Username'}/>
             <Input labelName={'Password'} type={'password'}/>
-            <Button label={'Sign Up'} btnClass={'btn-secondary'}/>
+            <Button label={'Sign Up'} btnClass={'btn-primary'}/>
         </div>
       </div>
     </div>

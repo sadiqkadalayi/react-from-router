@@ -20,21 +20,35 @@ function App() {
   }
 
   const [boxType, setBoaxType] = useState('hide');
+  const [cred , setCred] = useState(false);
+
+
+ 
+
   const showLogin = () => {
       setBoaxType('login');
+      setCred(false)
+     
   }    
 
   const showSignUp = () => {
       setBoaxType('signUp');
+     setCred(true);
+    
   }
   const hideAll = () => {
     setBoaxType('hide');
+    setCred(false)
   }
+
+
+
 
   return (
     <>
       <Nav showL={showLogin} showS={showSignUp} hideA={hideAll} Hshow={handleShow} />
-      <SubHead/>
+      <SubHead subC={cred}/>
+      
       <div className="container mt-lg-5 mb-lg-5">
         <div className="row d-flex justify-content-center align-middle">
           {boxType === 'login' ? <Login /> :null }

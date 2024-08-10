@@ -18,7 +18,7 @@ function Nav({showL,showS,hideA,Hshow}) {
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <ul className="nav nav-tabs">
                     <li className="nav-item ">
-                        <Button label={'Sign Up'} btnClass={'btn-secondary'} handle={showS}/>
+                        <Button label={'Sign Up'} btnClass={'btn-primary'} handle={showS}/>
                     </li>&nbsp;&nbsp;&nbsp;
                     <li className="nav-item">
                         <Button label={'Login'} handle={showL}/>
