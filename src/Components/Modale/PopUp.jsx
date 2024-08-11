@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Children } from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function PopUp({ Svar, Hclose }) {
+function PopUp({Svar,Hclose,children}) {
     return (
         <div>
 
@@ -14,6 +14,7 @@ function PopUp({ Svar, Hclose }) {
 
                     
                     <p>Congratulations..  you are successfully reached at modal componet.  Well done..</p>
+                    {children}
 
                 </Modal.Body>
                 <Modal.Footer>

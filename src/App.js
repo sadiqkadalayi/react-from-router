@@ -43,7 +43,7 @@ function App() {
           {boxType === 'login' ? <Login /> :null }
           {boxType === 'signUp' && <SugnUp />  }
           {boxType==='hide' && <Blank/> }
-        <PopUp Svar={show} Hclose={handleClose} />
+        <PopUp Svar={show} Hclose={handleClose}> <Blank modCont={''}/>  </PopUp> 
         </div>
       </div>
       <Footer />
