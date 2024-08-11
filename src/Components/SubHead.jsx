@@ -8,7 +8,9 @@ function SubHead({subC}) {
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-lg-5 mt-sm-5">
             <div className='text-center'>
                 <h1>Login & SignUp </h1>
-                {subC && <Cred Sm={subC}/>}
+                {subC==='running' && <Cred Sm={subC && 'Your credential will not be shared to anyone. End-To-End Encrypted'} />}
+                {subC==='run' &&  <Cred Sm={subC && 'if you are new here, Please go through the Sign Up Button to create a new account...' } />}
+                {subC==='notRun' &&  <Cred Sm={subC && 'Please follow the above Buttons...' } />}
                 <hr />
             </div>
         </div>

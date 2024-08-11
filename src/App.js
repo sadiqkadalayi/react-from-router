@@ -12,43 +12,32 @@ import PopUp from "./Components/Modale/PopUp";
 
 function App() {
   const [show, setShow] = useState(false);
-  const handleClose = () => {
-    setShow(false);
-  }
+
+  const handleClose = () => setShow(false);
   const handleShow = () => {
     setShow(true);
   }
 
   const [boxType, setBoaxType] = useState('hide');
-  const [cred , setCred] = useState(false);
-
-
- 
+  const [cred , setCred] = useState('notRun');
 
   const showLogin = () => {
       setBoaxType('login');
-      setCred(false)
-     
+      setCred('run')  
   }    
-
   const showSignUp = () => {
       setBoaxType('signUp');
-     setCred(true);
-    
+     setCred('running');
   }
   const hideAll = () => {
     setBoaxType('hide');
-    setCred(false)
+    setCred('notRun')
   }
-
-
-
 
   return (
     <>
       <Nav showL={showLogin} showS={showSignUp} hideA={hideAll} Hshow={handleShow} />
       <SubHead subC={cred}/>
-      
       <div className="container mt-lg-5 mb-lg-5">
         <div className="row d-flex justify-content-center align-middle">
           {boxType === 'login' ? <Login /> :null }
@@ -57,8 +46,6 @@ function App() {
         <PopUp Svar={show} Hclose={handleClose} />
         </div>
       </div>
-
-     
       <Footer />
     </>
   );
