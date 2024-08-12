@@ -7,12 +7,14 @@ function SugnUp() {
     <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
       <div className="mt-lg-2 shadow rounded-3 bg-success-subtle">
         <div className='s-inputs-fileds p-5'>
+        <form action="" className='container-fluid'>
             <Input labelName={'First Name:'}/>
             <Input labelName={'Last Name'}/>
             <Input labelName={'Mobile Number'}/>
             <Input labelName={'Username'}/>
             <Input labelName={'Password'} type={'password'}/>
             <Button label={'Sign Up'} btnClass={'btn-primary'}/>
+            </form>
         </div>
       </div>
     </div>

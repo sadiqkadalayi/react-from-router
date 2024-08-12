@@ -4,7 +4,7 @@ function Button({ label, handle, btnClass,toggle,targetArea }) {
   return (
     <>
       <button 
-      type='button' 
+      type='submit' 
       onClick={handle} 
       className={`x-5 btn ${btnClass ?? 'btn-primary'} shadow mt-1`} 
       data-bs-toggle={toggle ?? ''} 

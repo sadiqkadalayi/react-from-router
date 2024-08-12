@@ -10,9 +10,11 @@ function Login() {
       <div className="mt-lg-2 shadow rounded-3 bg-success-subtle">
         
             <div className="inputs-fileds p-5">
+              <form action="" className='container-fluid'>
                 <Input labelName={'Username'}/>
                 <Input labelName={'Password'} type={'password'}/>
                 <Button label={'Login'} />
+                </form>
             </div>
       </div>
     </div>
