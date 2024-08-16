@@ -4,7 +4,7 @@ import Button from '../Buttons/Button'
 
 
 
-function Nav({showL,showS,hideA,Hshow}) {
+function Nav({showL,showS,hideA,Hshow,toDo}) {
 
   return (
     <div className="container mt-4">
@@ -39,6 +39,9 @@ function Nav({showL,showS,hideA,Hshow}) {
                     </li>
                     <li className="nav-item">
                         <Button label={'Logout'} btnClass={'btn-danger'} handle={hideA}/>
+                    </li>&nbsp;&nbsp;
+                    <li className="nav-item">
+                        <Button label={'ToDo List'} btnClass={'btn-primary'} handle={toDo}/>
                     </li>
                 </ul>
             </div>
