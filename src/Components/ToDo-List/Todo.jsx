@@ -9,12 +9,18 @@ function Todo() {
     const [toDoInput, setTodoInput] = useState('hai');
     const [toDoListArray, setToDoListArray] = useState([]);
     const handleInput = (e) => {
-        setTodoInput(e.target.value);
+        const EValue = e.target.value;
+        setTodoInput(EValue);
         console.log(toDoInput);
     }
+
     const toDoAdd = () => {
-        setToDoListArray([...toDoListArray, {label:toDoInput,done:false}])
+        if(toDoInput===''){
+            alert('Please Enter any value')
+        }else{
+            setToDoListArray([...toDoListArray, {label:toDoInput,done:false}])
         setTodoInput('');
+        }
     }
     const makeItDone = (index) => {
         const temp = [...toDoListArray];
@@ -31,10 +37,12 @@ function Todo() {
         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <div className="mt-lg-2 shadow rounded-3 bg-success-subtle">
                 <div className='row'>
+                    <form>
                     <div className="inputs-fileds p-5">
                         <Input labelName={'To Do List'} toDoHandle={handleInput} value={toDoInput} />
                         <Button handle={toDoAdd} label={'Add'} />
                     </div>
+                    </form>
                 </div>
                 <div className='row'>
                     {
