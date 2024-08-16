@@ -1,37 +1,50 @@
 import React, { useState } from 'react'
-import Input from '../Inputs/Input'
-import Button from '../Buttons/Button'
 import ToDoList from './ToDoList'
+import Input from '../Inputs/Input';
+import Button from '../Buttons/Button';
 
 
 function Todo() {
 
-    const [toDoInput , setTodoInput]  = useState('hai');
+    const [toDoInput, setTodoInput] = useState('hai');
     const [toDoListArray, setToDoListArray] = useState([]);
     const handleInput = (e) => {
         setTodoInput(e.target.value);
         console.log(toDoInput);
     }
     const toDoAdd = () => {
-        setToDoListArray([toDoInput])
+        setToDoListArray([...toDoListArray, {label:toDoInput,done:false}])
         setTodoInput('');
     }
-
-  return (
-    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-    <div className="mt-lg-2 shadow rounded-3 bg-success-subtle">
-      
-          <div className="inputs-fileds p-5">
-            <form action="" className='container-fluid'>
-              <Input labelName={'Task'} toDoHandle={handleInput} value={toDoInput}/>
-              <Button label={'Add'} handle={toDoAdd} />
-              {toDoListArray.map((ele,ind)=><ToDoList label={ele} num={ind} key={ind} />)}
-             
-              </form>
-          </div>
-    </div>
-  </div>
-  )
+    const makeItDone = (index) => {
+        const temp = [...toDoListArray];
+        temp[index].done=true;
+        setToDoListArray(temp);
+    }
+    const deleteItem = (index) => {
+        const temp = [...toDoListArray];
+        temp.splice(index,1);
+        setToDoListArray(temp)
+    }
+    console.log(toDoListArray);
+    return (
+        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+            <div className="mt-lg-2 shadow rounded-3 bg-success-subtle">
+                <div className='row'>
+                    <div className="inputs-fileds p-5">
+                        <Input labelName={'To Do List'} toDoHandle={handleInput} value={toDoInput} />
+                        <Button handle={toDoAdd} label={'Add'} />
+                    </div>
+                </div>
+                <div className='row'>
+                    {
+                        toDoListArray.map((ele, index) => <ToDoList item={ele} index={index} key={index} makeItDone={makeItDone} dtItem={deleteItem} />
+                        )
+                    }
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default Todo
