@@ -37,6 +37,7 @@ function App() {
 
  const toDoHandle = ()=>{
   setBoaxType('toDoShow')
+  setCred('toDo')
  }
 
   return (

@@ -11,6 +11,7 @@ function SubHead({subC}) {
                 {subC==='running' && <Cred Sm={subC && 'Your credential will not be shared to anyone. End-To-End Encrypted'} />}
                 {subC==='run' &&  <Cred Sm={subC && 'if you are new here, Please go through the Sign Up Button to create a new account...' } />}
                 {subC==='notRun' &&  <Cred Sm={subC && 'Please follow the above Buttons...' } />}
+                {subC==='toDo' &&  <Cred Sm={subC && 'Enjoy with your To Do List' } />}
                 <hr />
             </div>
         </div>
