@@ -33,8 +33,8 @@ function Todo() {
         setToDoListArray(temp);
     }
     const deleteItem = (index) => {
-        const temp = [...toDoListArray];
-        temp.splice(index, 1);
+        const temp = [...toDoListArray]; 
+        temp.shift(index);
         setToDoListArray(temp)
     }
     console.log(toDoListArray);
@@ -42,7 +42,7 @@ function Todo() {
     return (
         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <div className="mt-lg-2 shadow rounded-3 bg-success-subtle">
-                {alertBox && <AlertBox />}
+                {alertBox && <AlertBox  />}
                 <div className='row'>
                     <form>
                         <div className="inputs-fileds p-5">

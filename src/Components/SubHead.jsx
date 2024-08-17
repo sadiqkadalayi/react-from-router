@@ -1,13 +1,16 @@
 import React from 'react'
 import Cred from './Cred'
 
-function SubHead({subC}) {
+function SubHead({subC,head}) {
   return (
     <div className="container">
         <div className="row">
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-lg-5 mt-sm-5">
             <div className='text-center'>
-                <h1>Login & SignUp </h1>
+                {head==='login' && <h1>Login</h1>}
+                {head==='signup' && <h1>Sign up</h1>}
+                {head==='blank' && <h1>Welcome to the React JS</h1>}
+                {head==='todo' && <h1>To-Do-App</h1>}
                 {subC==='running' && <Cred Sm={subC && 'Your credential will not be shared to anyone. End-To-End Encrypted'} />}
                 {subC==='run' &&  <Cred Sm={subC && 'if you are new here, Please go through the Sign Up Button to create a new account...' } />}
                 {subC==='notRun' &&  <Cred Sm={subC && 'Please follow the above Buttons...' } />}

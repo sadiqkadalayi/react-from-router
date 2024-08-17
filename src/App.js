@@ -21,29 +21,34 @@ function App() {
 
   const [boxType, setBoaxType] = useState('hide');
   const [cred , setCred] = useState('notRun');
+  const [Head , setHead] = useState('Welcome');
 
   const showLogin = () => {
       setBoaxType('login');
-      setCred('run')  
+      setCred('run') 
+      setHead('login') 
   }    
   const showSignUp = () => {
       setBoaxType('signUp');
      setCred('running');
+     setHead('signup') 
   }
   const hideAll = () => {
     setBoaxType('hide');
     setCred('notRun')
+    setHead('blank') 
   }
 
  const toDoHandle = ()=>{
   setBoaxType('toDoShow')
   setCred('toDo')
+  setHead('todo') 
  }
 
   return (
     <>
       <Nav showL={showLogin} showS={showSignUp} hideA={hideAll} Hshow={handleShow} toDo={toDoHandle} />
-      <SubHead subC={cred}/>
+      <SubHead subC={cred} head={Head}/>
       <div className="container mt-lg-5 mb-lg-5">
         <div className="row d-flex justify-content-center align-middle">
           {boxType === 'login' ? <Login /> :null }

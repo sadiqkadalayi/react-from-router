@@ -1,6 +1,6 @@
 import React from 'react'
 import './Blank.css'
-function Blank() {
+function Blank() { 
   return (
     <div className="container mt-3">
         <div className="row">
