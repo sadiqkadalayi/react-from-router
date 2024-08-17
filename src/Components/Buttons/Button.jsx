@@ -7,7 +7,7 @@ function Button({ label, handle, btnClass,toggle,targetArea }) {
       type='submit' 
       onClick={handle}
       
-      className={`x-5 btn ${btnClass ?? 'btn-primary'} shadow mt-1`} 
+      className={`x-5 btn ${btnClass ?? 'btn-primary'} shadow btn-sm mt-1`} 
       data-bs-toggle={toggle ?? ''} 
       data-bs-target={targetArea ?? ''}
       aria-current="page" 

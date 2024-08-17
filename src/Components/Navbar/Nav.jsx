@@ -7,7 +7,7 @@ import Button from '../Buttons/Button'
 function Nav({showL,showS,hideA,Hshow,toDo}) {
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 mb-5">
         <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
               <div className="row">
@@ -46,6 +46,7 @@ function Nav({showL,showS,hideA,Hshow,toDo}) {
                 </ul>
             </div>
         </div>
+        <hr />
     </div>
   )
 }
