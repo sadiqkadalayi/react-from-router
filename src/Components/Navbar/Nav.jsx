@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './Nav.css'
 import Button from '../Buttons/Button'
+import { Carousel } from 'bootstrap'
+import Carousels from '../Carousels/Carousels'
 
 
 
@@ -47,6 +49,7 @@ function Nav({showL,showS,hideA,Hshow,toDo}) {
             </div>
         </div>
         <hr />
+        <Carousels/>
     </div>
   )
 }
