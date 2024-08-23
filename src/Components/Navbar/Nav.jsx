@@ -6,7 +6,7 @@ import Carousels from '../Carousels/Carousels'
 
 
 
-function Nav({showL,showS,hideA,Hshow,toDo}) {
+function Nav({showL,showS,hideA,Hshow,toDo,contry}) {
 
   return (
     <div className="container mt-4 mb-5">
@@ -44,6 +44,9 @@ function Nav({showL,showS,hideA,Hshow,toDo}) {
                     </li>&nbsp;&nbsp;
                     <li className="nav-item">
                         <Button label={'ToDo List'} btnClass={'btn-primary'} handle={toDo}/>
+                    </li>&nbsp;&nbsp;
+                    <li className="nav-item">
+                        <Button label={'Countires'} btnClass={'btn-primary'} handle={contry}/>
                     </li>
                 </ul>
             </div>

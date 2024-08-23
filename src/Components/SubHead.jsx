@@ -11,11 +11,12 @@ function SubHead({subC,head}) {
                 {head==='signup' && <h1>Sign up</h1>}
                 {head==='blank' && <h1>Welcome to the React JS</h1>}
                 {head==='todo' && <h1>To-Do-App</h1>}
+                {head==='API' && <h1>API Calling with Axios</h1>}
                 {subC==='running' && <Cred Sm={subC && 'Your credential will not be shared to anyone. End-To-End Encrypted'} />}
                 {subC==='run' &&  <Cred Sm={subC && 'if you are new here, Please go through the Sign Up Button to create a new account...' } />}
                 {subC==='notRun' &&  <Cred Sm={subC && 'Please follow the above Buttons...' } />}
                 {subC==='toDo' &&  <Cred Sm={subC && 'Enjoy with your To Do List' } />}
-               
+                {subC==='contry' &&  <Cred Sm={subC && 'Now you can see the all country flags and details here..' } />}
             </div>
         </div>
         </div>
