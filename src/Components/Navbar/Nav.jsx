@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+
 import './Nav.css'
 import Button from '../Buttons/Button'
-import { Carousel } from 'bootstrap'
 import Carousels from '../Carousels/Carousels'
-
-
+import { Link } from 'react-router-dom';
 
 function Nav({showL,showS,hideA,Hshow,toDo,contry}) {
 
@@ -20,10 +18,14 @@ function Nav({showL,showS,hideA,Hshow,toDo,contry}) {
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <ul className="nav nav-tabs">
                     <li className="nav-item ">
-                        <Button label={'Sign Up'} btnClass={'btn-primary'} handle={showS}/>
+                        <Link to={'/SugnUp'}>
+                        <Button label={'Sign Up'} btnClass={'btn-primary'}/>
+                        </Link>
                     </li>&nbsp;&nbsp;&nbsp;
                     <li className="nav-item">
+                        <Link to={'/Login'}>
                         <Button label={'Login'} handle={showL}/>
+                        </Link>
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Languages</a>
@@ -36,17 +38,25 @@ function Nav({showL,showS,hideA,Hshow,toDo,contry}) {
                         </ul>
                     </li>
                     <li className="nav-item">
+                   
                     <Button label={'Modal'} btnClass={'btn-success'} handle={Hshow}/>
+                   
                     &nbsp;&nbsp;
                     </li>
                     <li className="nav-item">
+                        <Link to={'/'}>
                         <Button label={'Logout'} btnClass={'btn-danger'} handle={hideA}/>
+                        </Link>
                     </li>&nbsp;&nbsp;
                     <li className="nav-item">
+                        <Link to={'/Todo'}>
                         <Button label={'ToDo List'} btnClass={'btn-primary'} handle={toDo}/>
+                        </Link>
                     </li>&nbsp;&nbsp;
                     <li className="nav-item">
+                        <Link to={'/Contires'}>
                         <Button label={'Countires'} btnClass={'btn-primary'} handle={contry}/>
+                        </Link>
                     </li>
                 </ul>
             </div>

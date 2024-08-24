@@ -10,8 +10,7 @@ import SubHead from "./Components/SubHead";
 import PopUp from "./Components/Modale/PopUp";
 import Todo from "./Components/ToDo-List/Todo";
 import Contires from "./Components/Contries/Contires";
-
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -19,55 +18,67 @@ function App() {
   const handleClose = () => setShow(false);
   const handleShow = () => {
     setShow(true);
-  }
+  };
 
-  const [boxType, setBoaxType] = useState('hide');
-  const [cred, setCred] = useState('notRun');
-  const [Head, setHead] = useState('blank');
+  const [boxType, setBoaxType] = useState("hide");
+  const [cred, setCred] = useState("notRun");
+  const [Head, setHead] = useState("blank");
 
   const showLogin = () => {
-    setBoaxType('login');
-    setCred('run')
-    setHead('login')
-  }
+    setBoaxType("login");
+    setCred("run");
+    setHead("login");
+  };
   const showSignUp = () => {
-    setBoaxType('signUp');
-    setCred('running');
-    setHead('signup')
-  }
+    setBoaxType("signUp");
+    setCred("running");
+    setHead("signup");
+  };
   const hideAll = () => {
-    setBoaxType('hide');
-    setCred('notRun')
-    setHead('blank')
-  }
+    setBoaxType("hide");
+    setCred("notRun");
+    setHead("blank");
+  };
 
   const toDoHandle = () => {
-    setBoaxType('toDoShow')
-    setCred('toDo')
-    setHead('todo')
-  }
+    setBoaxType("toDoShow");
+    setCred("toDo");
+    setHead("todo");
+  };
   const countiesFetch = () => {
-    setBoaxType('countries');
-    setCred('contry')
-    setHead('API')
-  }
+    setBoaxType("countries");
+    setCred("contry");
+    setHead("API");
+  };
 
   return (
     <>
-      <Nav showL={showLogin} showS={showSignUp} hideA={hideAll} Hshow={handleShow} toDo={toDoHandle} contry={countiesFetch} />
+      {/* <Nav showL={showLogin} showS={showSignUp} hideA={hideAll} Hshow={handleShow} toDo={toDoHandle} contry={countiesFetch} /> */}
+      <BrowserRouter>
+      <Nav Hshow={handleShow}/>
       <SubHead subC={cred} head={Head} />
       <div className="container">
         <div className="row d-flex justify-content-center align-middle">
-          {boxType === 'login' ? <Login /> : null}
-          {boxType === 'signUp' && <SugnUp />}
-          {boxType === 'hide' && <Blank />}
-          {boxType === 'toDoShow' && <Todo />}
-          {boxType === 'countries' && <Contires />}
-          <PopUp Svar={show} Hclose={handleClose}> <Blank modCont={''} />  </PopUp>
+          
+            <Routes>
+             <Route path="/Login" element={<Login/>}></Route> 
+             <Route path="/SugnUp" element={<SugnUp/>}></Route> 
+             <Route path="/" element={<Blank/>}></Route> 
+             <Route path="/Todo" element={<Todo/>}></Route> 
+             <Route path="/Contires" element={<Contires/>}></Route> 
+           
+             {/* <Route><Login /></Route> 
+             <Route> <SugnUp /></Route> 
+             <Route> <Blank /></Route> 
+             <Route><Todo /></Route> 
+             <Route><Contires /></Route>  
+             */}
+            </Routes>
         </div>
       </div>
-     
       <Footer />
+      </BrowserRouter>
+      <PopUp Svar={show} Hclose={handleClose}><Blank/></PopUp>
     </>
   );
 }
