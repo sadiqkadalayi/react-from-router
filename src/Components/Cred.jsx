@@ -4,7 +4,7 @@ function Cred({Sm}) {
 
     return (
         <div>
-            <h6>{Sm}</h6>
+            <h6>{Sm}</h6> 
             
         </div>
     )

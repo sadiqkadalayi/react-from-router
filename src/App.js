@@ -11,6 +11,7 @@ import PopUp from "./Components/Modale/PopUp";
 import Todo from "./Components/ToDo-List/Todo";
 import Contires from "./Components/Contries/Contires";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "./Components/Not Found/NotFound";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -64,6 +65,7 @@ function App() {
              <Route path="/" element={<Blank/>}></Route> 
              <Route path="/Todo" element={<Todo/>}></Route> 
              <Route path="/Contires" element={<Contires/>}></Route> 
+             <Route path="*" element={<NotFound/>}></Route> 
             </Routes>
         </div>
       </div>

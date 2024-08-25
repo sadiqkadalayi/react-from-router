@@ -1,0 +1,25 @@
+.blank-404 {
+    background-color: rgb(190, 224, 224);
+    height: 55vh;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid none;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sub-head {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (max-width: 762px) {
+    .blank-404 {
+        height: 35vh;
+        width: 100%;
+    }
+}
