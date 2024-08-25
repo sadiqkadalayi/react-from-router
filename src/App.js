@@ -12,6 +12,12 @@ import Todo from "./Components/ToDo-List/Todo";
 import Contires from "./Components/Contries/Contires";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./Components/Not Found/NotFound";
+import Single from "./Components/Contries/SepeatePage/Single";
+import { createContext } from "react";
+
+
+export const dataContext = createContext(null);
+
 
 function App() {
   const [show, setShow] = useState(false);
@@ -24,6 +30,7 @@ function App() {
   // const [boxType, setBoaxType] = useState("hide");
   const [cred, setCred] = useState("notRun");
   const [Head, setHead] = useState("blank");
+  const [selected , setSelected] = useState(null);
 
   const showLogin = () => {
     // setBoaxType("login");
@@ -54,6 +61,7 @@ function App() {
 
   return (
     <>
+    <dataContext.Provider value={{selected, setSelected}}>
       <BrowserRouter>
       <Nav Hshow={handleShow} showL={showLogin} showS={showSignUp} hideA={hideAll} toDo={toDoHandle} contry={countiesFetch}/>
       <SubHead subC={cred} head={Head} />
@@ -65,12 +73,14 @@ function App() {
              <Route path="/" element={<Blank/>}></Route> 
              <Route path="/Todo" element={<Todo/>}></Route> 
              <Route path="/Contires" element={<Contires/>}></Route> 
+             <Route path="/Single/:code" element={<Single/>}></Route> 
              <Route path="*" element={<NotFound/>}></Route> 
             </Routes>
         </div>
       </div>
       <Footer />
       </BrowserRouter>
+      </dataContext.Provider>
       <PopUp Svar={show} Hclose={handleClose}><Blank/></PopUp>
     </>
   );

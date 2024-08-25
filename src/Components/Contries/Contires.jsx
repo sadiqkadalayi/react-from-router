@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Cards from './Cards'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 
 function Contires() {
@@ -15,6 +16,8 @@ function Contires() {
     //         });
     // }
 
+    const navigate = useNavigate();
+
     const getData = async () => {
         try {
             const res = await axios('https://restcountries.com/v3.1/all')
@@ -22,6 +25,7 @@ function Contires() {
             console.log(res);
         } catch (err) {
             console.log(err);
+            navigate('/')
         }
     }
 
