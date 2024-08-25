@@ -19,7 +19,7 @@ function Nav({showL,showS,hideA,Hshow,toDo,contry}) {
             <ul className="nav nav-tabs">
                     <li className="nav-item ">
                         <Link to={'/SugnUp'}>
-                        <Button label={'Sign Up'} btnClass={'btn-primary'}/>
+                        <Button label={'Sign Up'} btnClass={'btn-primary'} handle={showS}/>
                         </Link>
                     </li>&nbsp;&nbsp;&nbsp;
                     <li className="nav-item">

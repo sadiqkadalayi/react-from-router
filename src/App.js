@@ -20,59 +20,50 @@ function App() {
     setShow(true);
   };
 
-  const [boxType, setBoaxType] = useState("hide");
+  // const [boxType, setBoaxType] = useState("hide");
   const [cred, setCred] = useState("notRun");
   const [Head, setHead] = useState("blank");
 
   const showLogin = () => {
-    setBoaxType("login");
+    // setBoaxType("login");
     setCred("run");
     setHead("login");
   };
   const showSignUp = () => {
-    setBoaxType("signUp");
+    // setBoaxType("signUp");
     setCred("running");
     setHead("signup");
   };
   const hideAll = () => {
-    setBoaxType("hide");
+    // setBoaxType("hide");
     setCred("notRun");
     setHead("blank");
   };
 
   const toDoHandle = () => {
-    setBoaxType("toDoShow");
+    // setBoaxType("toDoShow");
     setCred("toDo");
     setHead("todo");
   };
   const countiesFetch = () => {
-    setBoaxType("countries");
+    // setBoaxType("countries");
     setCred("contry");
     setHead("API");
   };
 
   return (
     <>
-      {/* <Nav showL={showLogin} showS={showSignUp} hideA={hideAll} Hshow={handleShow} toDo={toDoHandle} contry={countiesFetch} /> */}
       <BrowserRouter>
-      <Nav Hshow={handleShow}/>
+      <Nav Hshow={handleShow} showL={showLogin} showS={showSignUp} hideA={hideAll} toDo={toDoHandle} contry={countiesFetch}/>
       <SubHead subC={cred} head={Head} />
       <div className="container">
         <div className="row d-flex justify-content-center align-middle">
-          
             <Routes>
              <Route path="/Login" element={<Login/>}></Route> 
              <Route path="/SugnUp" element={<SugnUp/>}></Route> 
              <Route path="/" element={<Blank/>}></Route> 
              <Route path="/Todo" element={<Todo/>}></Route> 
              <Route path="/Contires" element={<Contires/>}></Route> 
-           
-             {/* <Route><Login /></Route> 
-             <Route> <SugnUp /></Route> 
-             <Route> <Blank /></Route> 
-             <Route><Todo /></Route> 
-             <Route><Contires /></Route>  
-             */}
             </Routes>
         </div>
       </div>
