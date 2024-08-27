@@ -7,10 +7,11 @@ function NotFound() {
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-5">
                 <div className="blank-404">
                   <div className="sub-head">
-                  <h1>404 | Page Not Found</h1>
+                  <h1>404 Error - Page not found
+                  </h1>
                   </div>
                   <div className="sub-head">
-                  <p>please follw the button, if you want to Login or Register a new Account...</p>
+                  <p>Uh oh, looks like the page you are looking for has moved or no longer exists.</p>
                   </div>
                 </div>
                 

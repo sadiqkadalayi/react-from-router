@@ -17,6 +17,11 @@ function Nav({showL,showS,hideA,Hshow,toDo,contry}) {
             </div>
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <ul className="nav nav-tabs">
+                    <li className="nav-item">
+                        <Link to={'/'}>
+                        <Button label={'Home'} btnClass={'btn-danger'} handle={hideA}/>
+                        </Link>
+                    </li>&nbsp;&nbsp;
                     <li className="nav-item ">
                         <Link to={'/SugnUp'}>
                         <Button label={'Sign Up'} btnClass={'btn-primary'} handle={showS}/>
@@ -43,11 +48,7 @@ function Nav({showL,showS,hideA,Hshow,toDo,contry}) {
                    
                     &nbsp;&nbsp;
                     </li>
-                    <li className="nav-item">
-                        <Link to={'/'}>
-                        <Button label={'Logout'} btnClass={'btn-danger'} handle={hideA}/>
-                        </Link>
-                    </li>&nbsp;&nbsp;
+                    
                     <li className="nav-item">
                         <Link to={'/Todo'}>
                         <Button label={'ToDo List'} btnClass={'btn-primary'} handle={toDo}/>

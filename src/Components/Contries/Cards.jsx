@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
-import { dataContext } from '../../App';
+import { dataContext } from '../Context/DataContext';
 
 function Cards({ data }) {
     const {setSelected}=useContext(dataContext)

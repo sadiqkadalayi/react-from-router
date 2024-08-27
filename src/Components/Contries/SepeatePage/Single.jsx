@@ -17,6 +17,7 @@ function Single() {
         try{
         const req = await axios(`https://restcountries.com/v3.1/alpha/${code}`)
         setData(req.data[0])
+        debugger
         }catch(err) {
             console.log(err); 
         }

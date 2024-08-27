@@ -14,23 +14,25 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./Components/Not Found/NotFound";
 import Single from "./Components/Contries/SepeatePage/Single";
 import { createContext } from "react";
+import RootsLayout from "./Components/RootsLayout";
+import { dataContext } from "./Components/Context/DataContext";
 
 
-export const dataContext = createContext(null);
-
+// export const dataContext = createContext(null);
 
 function App() {
-  const [show, setShow] = useState(false);
 
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => {
     setShow(true);
   };
 
   // const [boxType, setBoaxType] = useState("hide");
-  const [cred, setCred] = useState("notRun");
-  const [Head, setHead] = useState("blank");
+  const [cred, setCred] = useState("notFound");
+  const [Head, setHead] = useState("notFound");
   const [selected , setSelected] = useState(null);
+
 
   const showLogin = () => {
     // setBoaxType("login");
@@ -61,27 +63,26 @@ function App() {
 
   return (
     <>
-    <dataContext.Provider value={{selected, setSelected}}>
-      <BrowserRouter>
-      <Nav Hshow={handleShow} showL={showLogin} showS={showSignUp} hideA={hideAll} toDo={toDoHandle} contry={countiesFetch}/>
-      <SubHead subC={cred} head={Head} />
+    <dataContext.Provider value={{selected, setSelected, handleShow, showLogin,showSignUp,hideAll,toDoHandle,countiesFetch, cred, Head}}>
+      <BrowserRouter>      
       <div className="container">
         <div className="row d-flex justify-content-center align-middle">
             <Routes>
-             <Route path="/Login" element={<Login/>}></Route> 
-             <Route path="/SugnUp" element={<SugnUp/>}></Route> 
-             <Route path="/" element={<Blank/>}></Route> 
-             <Route path="/Todo" element={<Todo/>}></Route> 
-             <Route path="/Contires" element={<Contires/>}></Route> 
-             <Route path="/Single/:code" element={<Single/>}></Route> 
-             <Route path="*" element={<NotFound/>}></Route> 
+                <Route path="/*" element={<RootsLayout/>}>
+                      <Route path="Login" element={<Login/>}></Route> 
+                      <Route path="SugnUp" element={<SugnUp/>}></Route> 
+                      <Route index element={<Blank/>}></Route> 
+                      <Route path="Todo" element={<Todo/>}></Route> 
+                      <Route path="Contires" element={<Contires/>}></Route> 
+                      <Route path="Single/:code" element={<Single/>}></Route> 
+                      <Route path="*" element={<NotFound />}></Route> 
+                </Route>
             </Routes>
         </div>
       </div>
-      <Footer />
       </BrowserRouter>
-      </dataContext.Provider>
-      <PopUp Svar={show} Hclose={handleClose}><Blank/></PopUp>
+    </dataContext.Provider>
+    <PopUp Svar={show} Hclose={handleClose}><Blank/></PopUp>
     </>
   );
 }
