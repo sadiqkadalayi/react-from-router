@@ -68,6 +68,8 @@ function App() {
       <div className="container">
         <div className="row d-flex justify-content-center align-middle">
             <Routes>
+                {/* <Route path="/Login" element={<Login/>}></Route>  */} 
+                { /* if you don't need the navebar and footer on login page, take the login compnt from roots layout*/}
                 <Route path="/*" element={<RootsLayout/>}>
                       <Route path="Login" element={<Login/>}></Route> 
                       <Route path="SugnUp" element={<SugnUp/>}></Route> 
