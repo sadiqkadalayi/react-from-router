@@ -34,15 +34,10 @@ function App() {
   // const [boxType, setBoaxType] = useState("hide");
   // const [cred, setCred] = useState("notFound");
   // const [Head, setHead] = useState("notFound");
-
-  const {Head,cred} = useSelector((store)=>store.data)
   const dispatch = useDispatch()
-  
-
   // const {count} = useSelector((store)=>store.data);
- 
 
-
+  
   const [selected , setSelected] = useState(null);
 
 
@@ -86,7 +81,7 @@ function App() {
 
   return (
     <>
-    <dataContext.Provider value={{selected, setSelected, handleShow, showLogin,showSignUp,hideAll,toDoHandle,countiesFetch, cred, Head}}>
+    <dataContext.Provider value={{selected, setSelected, handleShow, showLogin,showSignUp,hideAll,toDoHandle,countiesFetch}}>
       <BrowserRouter>      
       <div className="container">
         <div className="row d-flex justify-content-center align-middle">
