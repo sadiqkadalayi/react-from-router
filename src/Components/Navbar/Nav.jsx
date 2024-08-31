@@ -12,6 +12,7 @@ function Nav({showL,showS,hideA,Hshow,toDo,contry}) {
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
               <div className="row">
               <h4>React Mini Project</h4>
+             
               </div>
               
             </div>
